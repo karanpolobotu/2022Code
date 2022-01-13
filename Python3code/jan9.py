@@ -31,35 +31,41 @@ def SimpleInterest():
     if A == '':
         FV, PV, R, Period, T = 0, float(P), float(r), float(period), float(t)
         FV = PV * (1 + (R/Period) * (Period * T))
-        return 'Future Value is: ' + str(round(FV, 2))
+        print('Future Value is: ' + str(round(FV, 2)))
+        return 0
     
     #PRESENT VALUE
     elif P == '':
         FV, PV, R, Period, T = float(A), 0, float(r), float(period), float(t)
         PV = FV/(1 + (R/Period) * (Period * T))
-        return 'Present Value is: ' + str(round(PV, 2))
+        print('Present Value is: ' + str(round(PV, 2)))
+        return 0
 
     #ANNUAL INTEREST RATE
     elif r == '':
         FV, PV, R, Period, T = float(A), float(P), 0, float(period), float(t)
         R = ((Period * (FV/PV - 1))/(Period * T))
-        return 'Annual Interest rate is: ' + str(round(R, 4))
+        print('Annual Interest rate is: ' + str(round(R, 4)))
+        return 0
     
     #COMPOUNDING PERIOD
     elif period == '':
         FV, PV, R, Period, T = float(A), float(P), float(r), 0, float(t)
         Period = (R * T)/((FV/PV) - 1)
-        return 'Compounding Period is paradoxical for simple interest.It Cancels out. Must compute by hand. Apologies'
+        print('Compounding Period is paradoxical for simple interest.It Cancels out. Must compute by hand. Apologies')
+        return 0
     
     #TIME PERIOD
     elif t == '':
         FV, PV, R, Period, T = float(A), float(P), float(r), float(period), 0
         Tp = (Period * ((FV/PV) - 1))/R
         T = Tp/Period
-        return 'Time period (in years) is: ' + str(round(T, 2))
+        print('Time period (in years) is: ' + str(round(T, 2)))
+        return 0
 
     else:
-        return "Something is wrong, most likely more than 1 missing input. check again" 
+        print("Something is wrong, most likely more than 1 missing input. check again")
+        return 0 
 
 # Compound Interest
 
@@ -78,31 +84,38 @@ def CompoundInterest():
     if A == '':
         FV, PV, R, Period, T = 0, float(P), float(r), float(period), float(t)
         FV = PV * ((1 + (R/Period))**(T * Period))
-        return 'Future Value is: ' + str(round(FV, 2))
-    
+        print('Future Value is: ' + str(round(FV, 2))) 
+        return 0
+
     #PRESENT VALUE
     elif P == '':
         FV, PV, R, Period, T = float(A), 0, float(r), float(period), float(t)
         PV = FV/((1 + (R/Period))**(T * Period))
-        return 'Present Value is: ' + str(round(PV, 2))
+        print('Present Value is: ' + str(round(PV, 2)))
+        return 0
 
     #ANNUAL INTEREST RATE
     elif r == '':
         FV, PV, R, Period, T = float(A), float(P), 0, float(period), float(t)
         R = Period * ((FV/PV)**(1/(T * Period)) - 1)
-        return 'Annual Interest rate is: ' + str(round(R, 4))
+        R *= 100
+        print('Annual Interest rate is: ' + str(round(R, 2)) + "%")
+        return 0
     
     #COMPOUNDING PERIOD
     elif period == '':
-        return 'Compounding Period is paradoxical for simple interest.It Cancels out. Must compute by hand. Apologies'
+        print('Compounding Period is paradoxical for simple interest.It Cancels out. Must compute by hand. Apologies')
+        return 0
     
     #TIME PERIOD
     elif t == '':
         FV, PV, R, Period, T = float(A), float(P), float(r), float(period), 0
         Tp = (math.log10(FV/PV))/(math.log10(1 + (R/Period)))
         T = Tp/Period        
-        return 'Time period (in years) is: ' + str(round(T, 2))
+        print('Time period (in years) is: ' + str(round(T, 2)))        
+        return 0
 
     else:
-        return "Something is wrong, most likely more than 1 missing input. check again" 
+        print("Something is wrong, most likely more than 1 missing input. check again")
+        return  0
 

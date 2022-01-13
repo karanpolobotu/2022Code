@@ -18,6 +18,8 @@ def perpituity():
         r = float(input("Discount rate: "))
         PV = C/r
         print("PRESENT VALUE OF CONSOL/PERPITUITY: " + str(PV))
+        print('')        
+        print("REMINDER: PLEASE CHECK QUESTION. IF PAYMENTS START LATER, USE COMPOUD INTEREST CALCULATOR TO FIND ACTUAL PV DISCOUNTED FOR N-1 YEARS")
         return 0
     elif var == 2:
         PV = float(input("Present Value of Perpituity: "))
@@ -53,14 +55,16 @@ def gperpituity():
     
     if var == 1:
         C = float(input("Input Coupon payment (C): "))
-        r = float(input("Discount rate (r): "))
+        r = float(input("Discount rate (ex. 0.08) (r): "))
         g = float(input("Coupon payment growth rate (g): "))
         PV = C/(r - g)
         print("PRESENT VALUE OF CONSOL/PERPITUITY: " + str(PV))
+        print('')        
+        print("REMINDER: PLEASE CHECK QUESTION. IF PAYMENTS START MORE THAN 1 YEAR FROM NOW, USE COMPOUD INTEREST CALCULATOR TO FIND ACTUAL PV DISCOUNTED FOR N-1 YEARS")
         return 0
     elif var == 2:
         PV = float(input("Present Value of Perpituity: "))
-        r = float(input("Discount rate: "))
+        r = float(input("Discount rate (ex. 0.08) (r): "))
         g = float(input("Coupon payment growth rate (g): "))
         C = PV * (r - g)
         print("Coupon payment amount: " + str(C))
@@ -75,7 +79,7 @@ def gperpituity():
     elif var == 4:
         C = float(input("Input Coupon payment: "))
         PV = float(input("Present Value of Perpituity: "))
-        r = float(input("Discount rate: "))
+        r = float(input("Discount rate (ex. 0.08) (r): "))
         g = r - C/PV
         print("Interest rate/stated rate: " + str(r))
         return 0

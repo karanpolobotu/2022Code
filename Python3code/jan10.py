@@ -30,7 +30,7 @@ def NPV():
         oneWacc = 1 + wacc
         for i in range (0, time):
             imp = float(input("Enter Cash Inflow " + str(i + 1) + ": "))
-            impV = imp/(oneWacc ** i)            
+            impV = imp/(oneWacc ** (i + 1))            
             C.append(imp)
             CPV.append(impV)
             print('')
@@ -40,7 +40,7 @@ def NPV():
             print('')
             NPV += CPV[i]
                 
-        print("NET PRESENT VALUE: " + str(NPV))
+        print("NET PRESENT VALUE: " + str(round(NPV, 2)))
         return 0
 
     elif var == 2:
@@ -50,7 +50,7 @@ def NPV():
         COne = float(input("Cash Flow 1: "))
 
         wacc = (COne/(initialC + NPV) - 1)
-        print("Discount Rate/wacc is: " + str(wacc))
+        print("Discount Rate/wacc is: " + str(round(wacc)))
         return 0
 
     elif var == 3:
@@ -59,7 +59,7 @@ def NPV():
         wacc = float(input("Enter Discount rate (from percent to decimal): "))
         COne = float(input("Cash Flow 1: "))
         initialC = COne/(1 + wacc) - NPV
-        print("Initial Cash Outflow: " + str(initialC))
+        print("Initial Cash Outflow: " + str(round(initialC)))
         return 0
 
     elif var == 4:
@@ -68,7 +68,7 @@ def NPV():
         wacc = float(input("Enter Discount rate (from percent to decimal): "))
         initialC = float(input("Enter Initial Cash Outflow (IN POSITIVE): "))
         COne = (1 + wacc) * (initialC + NPV)
-        print("Initial Cash Inflow (year 1): " + str(COne))
+        print("Initial Cash Inflow (year 1): " + str(round(COne)))
         return 0
 
     else:
@@ -91,22 +91,22 @@ def rates():
     print('')
 
     if var == 1:
-        APR = int(input("Enter APR: "))
-        m = int(input("Enter Compounding Frequency (semiannual = 2, annual = 1, quarterly = 4, etc. ): "))
+        APR = float(input("Enter APR: "))
+        m = float(input("Enter Compounding Frequency (semiannual = 2, annual = 1, quarterly = 4, etc. ): "))
         EAR = (1 + (APR/m))**m - 1
-        print("EFFECTIVE ANNUAL RATE: " + str(EAR))
+        print("EFFECTIVE ANNUAL RATE: " + str(round(EAR, 4)))
         return 0
 
     elif var == 2:
-        EAR = int(input("Enter EAR: "))
-        m = int(input("Enter Compounding Frequency (semiannual = 2, annual = 1, quarterly = 4, etc. ): "))
+        EAR = float(input("Enter EAR: "))
+        m = float(input("Enter Compounding Frequency (semiannual = 2, annual = 1, quarterly = 4, etc. ): "))
         APR = m * ((EAR + 1)**(1/m) - 1)
-        print("ANNUAL PERCENTAGE RATE/ STATED RATE / R: " + str(APR))
+        print("ANNUAL PERCENTAGE RATE/ STATED RATE / R: " + str(round(APR, 4)))
         return 0
-    print('')
+        
     else:
-    print("SELECTION DOESNT EXIST. SORRY")
-    rates()
+        print("SELECTION DOESNT EXIST. SORRY")
+        rates()
 
     return 0
 
@@ -127,36 +127,33 @@ def contComp():
     var = int(input("Which Variable are you solving for: "))
     print('')
 
-    m = int(input("Enter Compounding Frequency (semiannual = 2, annual = 1, quarterly = 4, etc. ): "))
     if var == 1:
-        initialC = int(input("Principal Amount: "))
-        r = int(input("Annual Effective Rate/stated rate: "))
-        time =  int(input("time in years: "))
-        FV = initialC * ((math.e) ** (r/m) * (time * m))
-        print("CONTINUOUS COMPOUNDING IS: " + str(FV))
+        initialC = float(input("Principal Amount: "))
+        r = float(input("Annual Effective Rate/stated rate: "))
+        time =  float(input("time in years: "))
+        FV = initialC * ((math.e) ** (r * time))
+        print("CONTINUOUS COMPOUNDING IS: " + str(round(FV, 2)))
         return 0
 
     elif var == 2:
-        FV =  int(input("final value: "))
-        r = int(input("Annual Effective Rate/stated rate: "))
-        time =  int(input("time in years: "))
-        initialC = FV/((math.e) ** (r/m) * (time * m))
-        print("PRINCIPAL AMOUNT: " + str(initialC))
+        FV =  float(input("final value: "))
+        r = float(input("Annual Effective Rate/stated rate: "))
+        time =  float(input("time in years: "))
+        initialC = FV/((math.e) ** (r * time))
+        print("PRINCIPAL AMOUNT: " + str(round(initialC, 2)))
         return 0
     elif var == 3:
-        m = 1
-        FV =  int(input("final value: "))
-        initialC = int(input("Principal Amount: "))
-        time =  int(input("time in years: "))
+        FV =  float(input("final value: "))
+        initialC = float(input("Principal Amount: "))
+        time =  float(input("time in years: "))
         r = (math.log(FV/initialC))/time
-        print("ANNUAL INTEREST RATE IS: " + str(r))
+        print("ANNUAL INTEREST RATE IS: " + str(round(r, 2)))
         return 0
     elif var == 4:
-        m = 1
-        FV =  int(input("final value: "))
-        initialC = int(input("Principal Amount: "))
-        r = int(input("Annual Effective Rate/stated rate: "))
+        FV =  float(input("final value: "))
+        initialC = float(input("Principal Amount: "))
+        r = float(input("Annual Effective Rate/stated rate: "))
         time = (math.log(FV/initialC))/r
-        print("TOTAL TIME IN YEARS: " + str(time))
+        print("TOTAL TIME IN YEARS: " + str(round(time, 2)))
 
     return 0
