@@ -1,5 +1,7 @@
 #More Financial Functions
 
+import math
+
 #Perpituities
 
 def perpituity():

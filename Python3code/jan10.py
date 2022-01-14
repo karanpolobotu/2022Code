@@ -91,14 +91,14 @@ def rates():
     print('')
 
     if var == 1:
-        APR = float(input("Enter APR: "))
+        APR = float(input("Enter APR (DECIMAL, ex. 0.08): "))
         m = float(input("Enter Compounding Frequency (semiannual = 2, annual = 1, quarterly = 4, etc. ): "))
         EAR = (1 + (APR/m))**m - 1
         print("EFFECTIVE ANNUAL RATE: " + str(round(EAR, 4)))
         return 0
 
     elif var == 2:
-        EAR = float(input("Enter EAR: "))
+        EAR = float(input("Enter EAR (DECIMAL, ex. 0.08): "))
         m = float(input("Enter Compounding Frequency (semiannual = 2, annual = 1, quarterly = 4, etc. ): "))
         APR = m * ((EAR + 1)**(1/m) - 1)
         print("ANNUAL PERCENTAGE RATE/ STATED RATE / R: " + str(round(APR, 4)))
