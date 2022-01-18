@@ -151,10 +151,6 @@ print("User Items: " + str(floatList()))
 
 #Exercise 6 - Write all content to a given file into a new file but skip line 5
 
-    
-
-
-
 
 
 
