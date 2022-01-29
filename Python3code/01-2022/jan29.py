@@ -38,6 +38,35 @@ class LinkedList:
         # insert
         temp.next = new_Node
 
+    def deleteNode(self, key):
+        # storing the head node
+
+        temp = self.head
+
+        # edge case when deleting one and only node
+
+        if (temp != None):
+            if temp.data == key:
+                self.head = temp.next
+                temp = None
+                return
+
+        # keep going through list until you get to the data to be deleted
+        while (temp != None):
+            if temp.data = key:
+                break
+
+            # delete this instance
+            prev = temp
+            temp = temp.next
+
+        if temp == None:
+            return
+
+        prev.next = temp.next
+
+        temp = None
+
     def show(self):
         temp = self.head
         while (temp):
