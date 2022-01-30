@@ -55,21 +55,18 @@ class Stack:
         return 0
 
     def push(self, item):
-        # Add data item to last part of stack
+        # Add data item to last part of stack (LIFO)
         new_Node = Node(item)
 
-        if self.head == None: #edge case/empty List
+        if self.head == None:
             self.head = new_Node
-            print("Pushed!")
             return 0
 
-        temp = self.head
+        else:
+            new_Node.next = self.head
+            self.head = new_Node #(swap em out)
 
-        while (temp.next):
-            temp = temp.next
-
-        temp.next = new_Node
-        print("Pushed!")
+        return 0
 
 
     def is_empty(self):
@@ -95,9 +92,14 @@ if __name__ == "__main__":
     stacktest.pop()
     print(stacktest.show())
     print("is empty: ", stacktest.is_empty())
+    print(stacktest.show())
     stacktest.push(1)
+    print(stacktest.show())
     stacktest.push(2)
+    print(stacktest.show())
     stacktest.push(3)
+    print(stacktest.show())
+    stacktest.pop()
     print("Stack: ", stacktest.show())
     print("length: ", stacktest.size())
     print("is empty: ", stacktest.is_empty())
