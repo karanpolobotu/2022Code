@@ -16,7 +16,7 @@ class Stack:
         self.array.append(input)
         return 0
 
-    def pop(self, input):
+    def pop(self):
         if len(self.array) == 0:
             return "list empty"
 

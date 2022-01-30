@@ -53,7 +53,7 @@ class LinkedList:
 
         # keep going through list until you get to the data to be deleted
         while (temp != None):
-            if temp.data = key:
+            if temp.data == key:
                 break
 
             # delete this instance
