@@ -1,4 +1,8 @@
-#LEETCODE Problem 26, removing duplicates using in place algorithm. O(n^3), passes 360/361 test cases
+#LEETCODE Problem 26, removing duplicates using in place algorithm. O(n^3), passes 360/361 test cases, case 361 is too large so the time is exceeded
+
+#Need to find more efficient solution
+
+#WILL ONLY RUN IN LEETCODE COMPILER, HERE: https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
