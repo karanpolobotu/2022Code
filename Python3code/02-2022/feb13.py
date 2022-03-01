@@ -1,4 +1,4 @@
-# duplicate zeroes in input
+# duplicate zeroes without inplace modification
 
 class Solution:
     def duplicateZeros(self, arr):
