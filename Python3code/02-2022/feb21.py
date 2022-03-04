@@ -3,7 +3,7 @@
 class Solution:
     def replaceElements(self, arr: list) -> list:
         #handle edge case
-        while len(nums) > 0:
+        while len(arr) > 0:
             #create pointer 1 that starts at second elem (1st elem is fine in place)
             writePointer = 1
 
