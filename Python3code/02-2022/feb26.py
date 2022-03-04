@@ -46,4 +46,4 @@ if __name__ == "__main__":
     test_arr = [3,1,2,4]
 
     test_obj = Solution()
-    print(test_obj.heightChecker(test_arr))
+    print(test_obj.thirdMax(test_arr))
