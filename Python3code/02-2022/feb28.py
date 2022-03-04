@@ -1,3 +1,5 @@
+# finds dissapeared numbers - Arrays 101
+
 class Solution:
     def findDisappearedNumbers(self, nums: list) -> list:
 
