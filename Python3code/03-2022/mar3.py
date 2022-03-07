@@ -1,3 +1,5 @@
+# Leetcode problem Implement strStr(): https://leetcode.com/problems/implement-strstr/submissions/
+
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         if len(needle) == 0:
