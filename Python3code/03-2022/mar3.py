@@ -1,4 +1,4 @@
-# Leetcode problem Implement strStr(): https://leetcode.com/problems/implement-strstr/submissions/
+# Leetcode problem and solution to Implement strStr(): https://leetcode.com/problems/implement-strstr/submissions/
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
@@ -14,3 +14,11 @@ class Solution:
 
 
         return -1
+
+if __name__ == "__main__":
+    test_needle = ""
+    test_haystack = ""
+
+    test_obj = Solution()
+
+    print(test_obj.strStr(test_haystack, test_needle))
