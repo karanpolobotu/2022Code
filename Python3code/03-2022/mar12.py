@@ -1,4 +1,4 @@
-# Delete duplicate elements from a linked List
+# Leetcode, deleting duplication of list: https://leetcode.com/problems/remove-duplicates-from-sorted-list/submissions/
 
 class ListNode:
     def __init__(self, val=0, next=None):
